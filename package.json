@@ -9,7 +9,7 @@
     "lint:all": "npm run lint:style && npm run lint:script"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": "npx eslint --fix"
+    "src/**/*.{ts,tsx}": ["prettier --write","npx eslint --fix"]
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "redux": "^4.2.1"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^17.7.0",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.4.1",
