@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "typeRoots":["./node_modules/@types","./typings"],
+    "jsx":"react",
+    "lib": ["esnext","dom"],
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
