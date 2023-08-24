@@ -9,7 +9,10 @@
     "lint:all": "npm run lint:style && npm run lint:script"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": ["prettier --write","npx eslint"]
+    "src/**/*.{ts,tsx}": [
+      "prettier --write",
+      "npx eslint"
+    ]
   },
   "repository": {
     "type": "git",
@@ -45,7 +48,9 @@
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.2",
     "tailwindcss": "^3.3.3",
-    "typescript": "*"
+    "typescript": "*",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   },
   "config": {
     "commitizen": {

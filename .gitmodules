@@ -1,0 +1,6 @@
+[submodule "nginx-proxy"]
+	path = nginx-proxy
+	url = git@github.com:xusai2014/nginx-proxy.git
+[submodule "next-site"]
+	path = next-site
+	url = git@github.com:xusai2014/next-site.git
