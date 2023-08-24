@@ -4,15 +4,10 @@
   "description": "项目集",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx webpack serve --mode development",
+    "build": "npx webpack",
     "prepare": "npx husky install",
     "lint:all": "npm run lint:style && npm run lint:script"
-  },
-  "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "prettier --write",
-      "npx eslint"
-    ]
   },
   "repository": {
     "type": "git",
@@ -36,6 +31,8 @@
     "@typescript-eslint/parser": "^6.4.1",
     "commitizen": "^4.3.0",
     "commitlint": "^17.7.1",
+    "css-loader": "^6.8.1",
+    "css-minimizer-webpack-plugin": "^5.0.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.0.1",
     "eslint-config-standard-with-typescript": "^38.0.0",
@@ -43,14 +40,17 @@
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.33.2",
+    "html-webpack-plugin": "^5.5.3",
     "husky": "^8.0.3",
     "lerna": "^7.1.5",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.2",
+    "style-loader": "^3.3.3",
     "tailwindcss": "^3.3.3",
     "typescript": "*",
     "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "config": {
     "commitizen": {
