@@ -9,7 +9,7 @@
     "lint:all": "npm run lint:style && npm run lint:script"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": ["prettier --write","npx eslint --fix"]
+    "src/**/*.{ts,tsx}": ["prettier --write","npx eslint"]
   },
   "repository": {
     "type": "git",
