@@ -1,0 +1,7 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "files": [
+    "src/**/*.ts",
+    "rollup.config.ts"
+  ]
+}

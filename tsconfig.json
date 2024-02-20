@@ -2,11 +2,13 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "typeRoots":["./node_modules/@types","./typings"],
+    "target": "ES5",
     "jsx":"react",
     "lib": ["esnext","dom"],
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "webpack.config.ts"
   ]
 }

@@ -1,5 +1,5 @@
-import React from 'react'
 import { createRoot, type Root } from 'react-dom/client'
+import * as React from 'react'
 
 const dom = document.getElementById('app')
 
