@@ -1,7 +1,9 @@
 import React from 'react'
 import { createRoot, type Root } from 'react-dom/client'
 
-document.body.innerHTML = '<div id="app"></div>'
+const dom = document.getElementById('app')
 
-const root: Root = createRoot(document.getElementById('app'))
-root.render(<h1>Hello, world</h1>)
+if (dom !== null) {
+  const root: Root = createRoot(dom)
+  root.render(<h1>Hello, world</h1>)
+}

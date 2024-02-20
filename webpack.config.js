@@ -7,7 +7,7 @@ module.exports = {
     entry: "./src/index.tsx",
     output: {
         path: path.resolve(__dirname, "dist"), // string (default)
-        filename: "[name].js", // string (default)
+        filename: "bundle.js", // string (default)
         publicPath: "/assets/", // string
         library: {
             type: "umd",
@@ -22,21 +22,7 @@ module.exports = {
                 include: [
                     path.resolve(__dirname, "src")
                 ],
-                loader: "babel-loader",
-                options: {
-                    presets: ["es2015"]
-                },
-               /* // options for the loader
-                use: [
-                    // apply multiple loaders and options instead
-                    "htmllint-loader",
-                    {
-                        loader: "html-loader",
-                        options: {
-                            // ...
-                        }
-                    }
-                ],*/
+                loader: "ts-loader",
                 type: "javascript/auto",
             },
             {
@@ -58,29 +44,11 @@ module.exports = {
         ],
     },
     resolve: {
-        // options for resolving module requests
-        // (does not apply to resolving of loaders)
-        modules: ["node_modules", path.resolve(__dirname, "src")],
-        // directories where to look for modules (in order)
-        extensions: [".ts", ".json", ".tsx", ".css"],
-        // 使用的扩展名
-        alias: {
-            // a list of module name aliases
-            // aliases are imported relative to the current context
-            "module": "new-module",
-            // 别名："module" -> "new-module" 和 "module/path/file" -> "new-module/path/file"
-            "only-module$": "new-module",
-            // 别名 "only-module" -> "new-module"，但不匹配 "only-module/path/file" -> "new-module/path/file"
-            "module": path.resolve(__dirname, "app/third/module.js"),
-            // alias "module" -> "./app/third/module.js" and "module/file" results in error
-            "module": path.resolve(__dirname, "app/third"),
-            // alias "module" -> "./app/third" and "module/file" -> "./app/third/file"
-            [path.resolve(__dirname, "app/module.js")]: path.resolve(__dirname, "app/alternative-module.js"),
-            // alias "./app/module.js" -> "./app/alternative-module.js"
-        },
-        /* 可供选择的别名语法（点击展示） */
-        /* 高级解析选项（点击展示） */
-        /* Expert resolve configuration (click to show) */
+        // // options for resolving module requests
+        // // (does not apply to resolving of loaders)
+        // modules: ["node_modules", path.resolve(__dirname, "src")],
+        // // directories where to look for modules (in order)
+        extensions: [".ts",".tsx",".js"],
     },
     performance: {
         hints: "warning", // 枚举
@@ -97,12 +65,7 @@ module.exports = {
     context: __dirname,
     target: "web",
     externals: ["react"],
-    externalsType: "var",
-    externalsPresets: {
-
-    },
     ignoreWarnings: [/warning/],
-    watch: true,
     watchOptions: {
         ignored: /node_modules/,
     },
@@ -157,7 +120,7 @@ module.exports = {
         chunkIds: "size",
         moduleIds: "size",
         mangleExports: "size",
-        minimize: true,
+        minimize: process.env.mode === 'production',
         minimizer: [new CssMinimizer(), "..."],
         splitChunks: {
             cacheGroups: {
