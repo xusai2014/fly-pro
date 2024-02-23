@@ -1,10 +1,10 @@
 import * as path from 'path'
 import * as HtmlWebpackPlugin from 'html-webpack-plugin'
 import * as CssMinimizer from 'css-minimizer-webpack-plugin'
-
+import { VueLoaderPlugin } from 'vue-loader'
 export default {
   mode: process.env.mode,
-  entry: './src/index.tsx',
+  entry: './src/index.vue.ts',
   output: {
     path: path.resolve(__dirname, 'dist'), // string (default)
     filename: 'bundle.js', // string (default)
@@ -18,10 +18,14 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(tsx|ts)?$/,
+        test: /\.(tsx|ts|js)?$/,
         include: [path.resolve(__dirname, 'src')],
-        loader: 'ts-loader',
-        type: 'javascript/auto',
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.vue?$/,
+        include: [path.resolve(__dirname, 'src')],
+        loader: 'vue-loader',
       },
       {
         rules: [
@@ -34,7 +38,7 @@ export default {
             type: 'asset/resource',
           },
           {
-            test: /\.(woff|woff2|eot|ttf|otf)$/i,
+            test: /\.(woff|woff2|eot|ttf|otf|json)$/i,
             type: 'asset/resource',
           },
         ],
@@ -46,25 +50,27 @@ export default {
     // // (does not apply to resolving of loaders)
     // modules: ["node_modules", path.resolve(__dirname, "src")],
     // // directories where to look for modules (in order)
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.vue', '.js', '.json'],
   },
-  performance: {
-    hints: 'warning', // 枚举
-    maxAssetSize: 200000, // 整数类型（以字节为单位）
-    maxEntrypointSize: 400000, // 整数类型（以字节为单位）
-    assetFilter: function (assetFilename) {
-      // 提供资源文件名的断言函数
-      return assetFilename.endsWith('.css') || assetFilename.endsWith('.js')
-    },
-  },
+  // performance: {
+  //   hints: 'warning', // 枚举
+  //   maxAssetSize: 200000, // 整数类型（以字节为单位）
+  //   maxEntrypointSize: 400000, // 整数类型（以字节为单位）
+  //   assetFilter: function (assetFilename) {
+  //     // 提供资源文件名的断言函数
+  //     return assetFilename.endsWith('.css') || assetFilename.endsWith('.js')
+  //   },
+  // },
   devtool:
     process.env.mode === 'development' ? 'inline-source-map' : 'source-map',
   context: __dirname,
   target: 'web',
   // externals: ['react'],
   ignoreWarnings: [/warning/],
+  watch: true,
   watchOptions: {
     ignored: /node_modules/,
+    poll: true,
   },
   // stats:
   //   process.env.mode === 'development'
@@ -118,6 +124,7 @@ export default {
     new HtmlWebpackPlugin({
       title: 'fly-pro',
     }),
+    new VueLoaderPlugin(),
   ],
   optimization: {
     chunkIds: 'size',

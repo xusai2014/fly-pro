@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "typeRoots":["./node_modules/@types","./typings"],
+    "target": "ES5",
+    "lib": ["esnext"],
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "outDir": "lib"
+  },
+  "include": [
+    "src/**/*",
+    "webpack.config.ts"
+  ]
+}

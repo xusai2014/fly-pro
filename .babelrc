@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": "3"
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    ["@fly/babel-plugin-layout", {
+      "mode": "properties",
+      "pathReg": "/src/views/(.*)(/[^/]+.(vue|tsx|ts|jsx|js))$",
+      "jsonRule":"/src/views/$1/dRaw.json"
+    }]
+  ]
+}

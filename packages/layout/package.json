@@ -1,0 +1,35 @@
+{
+  "name": "@fly/layout",
+  "version": "0.0.0",
+  "description": "布局引擎SDK",
+  "keywords": [
+    "SDK"
+  ],
+  "author": "Jerry <18800102517@163.com>",
+  "homepage": "https://github.com/xusai2014/fly-pro/tree/master/packages/layout#readme",
+  "license": "ISC",
+  "main": "lib/layout.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xusai2014/fly-pro.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/xusai2014/fly-pro/issues"
+  },
+  "devDependencies": {
+    "rollup": "^4.12.0"
+  }
+}

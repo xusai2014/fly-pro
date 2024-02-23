@@ -28,4 +28,5 @@ git submodule update --init --recursive
 ```shell
 ## 创建新包
 lerna create XXX
+pnpm add @types/node -D
 ```

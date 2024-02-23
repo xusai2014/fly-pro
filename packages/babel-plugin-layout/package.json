@@ -1,0 +1,34 @@
+{
+  "name": "@fly/babel-plugin-layout",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Jerry <18800102517@163.com>",
+  "homepage": "https://github.com/xusai2014/fly-pro/tree/master/packages/babel-plugin-layout#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "module": "src/index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xusai2014/fly-pro.git"
+  },
+  "scripts": {
+    "prepublish": "npx tsc",
+    "dev": "tsc --watch"
+  },
+  "bugs": {
+    "url": "https://github.com/xusai2014/fly-pro/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.20"
+  }
+}
