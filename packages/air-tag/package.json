@@ -1,0 +1,49 @@
+{
+  "name": "@fly/air-tag",
+  "version": "0.0.0",
+  "description": "布局引擎SDK",
+  "type": "module",
+  "keywords": [
+    "SDK"
+  ],
+  "author": "Jerry <18800102517@163.com>",
+  "homepage": "https://github.com/xusai2014/fly-pro/tree/master/packages/layout#readme",
+  "license": "ISC",
+  "main": "lib/layout.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xusai2014/fly-pro.git"
+  },
+  "scripts": {
+    "build": "rollup -c --environment NODE_ENV:production --configPlugin typescript --bundleConfigAsCjs",
+    "dev": "rollup -c -w --environment NODE_ENV:development --configPlugin typescript --bundleConfigAsCjs",
+    "test": ""
+  },
+  "bugs": {
+    "url": "https://github.com/xusai2014/fly-pro/issues"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.5",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.11.20",
+    "rollup": "^4.12.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.36.0"
+  },
+  "dependencies": {
+    "@rollup/plugin-alias": "^5.1.0"
+  }
+}

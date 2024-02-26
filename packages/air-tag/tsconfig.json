@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "es5",
+    "module": "NodeNext",
+    "lib": ["DOM"]
+  },
+
+  "include": [
+    "src/**/*.ts",
+    "rollup.config.ts",
+    "global.d.ts"
+  ],
+  "exclude": [
+    "node_modules/**"
+  ]
+}
